@@ -11,6 +11,8 @@
 		C5D631A429CD564600D0C9AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D631A329CD564600D0C9AB /* ContentView.swift */; };
 		C5D631A629CD564800D0C9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D631A529CD564800D0C9AB /* Assets.xcassets */; };
 		C5D631A929CD564800D0C9AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D631A829CD564800D0C9AB /* Preview Assets.xcassets */; };
+		C5D631B129CD571300D0C9AB /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D631B029CD571300D0C9AB /* Symbols.swift */; };
+		C5D631B329CD596400D0C9AB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D631B229CD596400D0C9AB /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		C5D631A329CD564600D0C9AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C5D631A529CD564800D0C9AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5D631A829CD564800D0C9AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5D631B029CD571300D0C9AB /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
+		C5D631B229CD596400D0C9AB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		C5D631A029CD564600D0C9AB /* iOSTakeHomeProject */ = {
 			isa = PBXGroup;
 			children = (
+				C5D631AF29CD568500D0C9AB /* Resources */,
 				C5D631A129CD564600D0C9AB /* iOSTakeHomeProjectApp.swift */,
 				C5D631A329CD564600D0C9AB /* ContentView.swift */,
 				C5D631A529CD564800D0C9AB /* Assets.xcassets */,
@@ -65,6 +70,15 @@
 				C5D631A829CD564800D0C9AB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C5D631AF29CD568500D0C9AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C5D631B029CD571300D0C9AB /* Symbols.swift */,
+				C5D631B229CD596400D0C9AB /* Theme.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D631B129CD571300D0C9AB /* Symbols.swift in Sources */,
+				C5D631B329CD596400D0C9AB /* Theme.swift in Sources */,
 				C5D631A429CD564600D0C9AB /* ContentView.swift in Sources */,
 				C5D631A229CD564600D0C9AB /* iOSTakeHomeProjectApp.swift in Sources */,
 			);
