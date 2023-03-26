@@ -17,6 +17,7 @@
 		C5AB58F329CFBAC200F48AB8 /* PersonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AB58F229CFBAC200F48AB8 /* PersonItemView.swift */; };
 		C5AB58F529CFBD0B00F48AB8 /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AB58F429CFBD0B00F48AB8 /* PillView.swift */; };
 		C5AB58F729CFCADA00F48AB8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AB58F629CFCADA00F48AB8 /* DetailView.swift */; };
+		C5C4CC0229D0968700659B6D /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C4CC0129D0968700659B6D /* CreateView.swift */; };
 		C5D631A229CD564600D0C9AB /* iOSTakeHomeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D631A129CD564600D0C9AB /* iOSTakeHomeProjectApp.swift */; };
 		C5D631A629CD564800D0C9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D631A529CD564800D0C9AB /* Assets.xcassets */; };
 		C5D631A929CD564800D0C9AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D631A829CD564800D0C9AB /* Preview Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		C5AB58F229CFBAC200F48AB8 /* PersonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonItemView.swift; sourceTree = "<group>"; };
 		C5AB58F429CFBD0B00F48AB8 /* PillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
 		C5AB58F629CFCADA00F48AB8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C5C4CC0129D0968700659B6D /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		C5D6319E29CD564600D0C9AB /* iOSTakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D631A129CD564600D0C9AB /* iOSTakeHomeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTakeHomeProjectApp.swift; sourceTree = "<group>"; };
 		C5D631A529CD564800D0C9AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		C5D631BA29CD5CAC00D0C9AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C5C4CC0129D0968700659B6D /* CreateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				C5D631A229CD564600D0C9AB /* iOSTakeHomeProjectApp.swift in Sources */,
 				C567E40629CE9131004C56FC /* UsersResponse.swift in Sources */,
 				C5AB58F329CFBAC200F48AB8 /* PersonItemView.swift in Sources */,
+				C5C4CC0229D0968700659B6D /* CreateView.swift in Sources */,
 				C567E40929CE9FE6004C56FC /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
