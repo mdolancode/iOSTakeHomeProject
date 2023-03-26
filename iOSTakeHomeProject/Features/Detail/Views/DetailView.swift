@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    @State private var userInfo: UserDetailResponse?
+    
     var body: some View {
         ZStack {
             background
@@ -16,6 +19,8 @@ struct DetailView: View {
                 
                 VStack(alignment: .leading,
                        spacing: 18) {
+                    
+                    avatar
                     
                     Group {
                         general
@@ -26,7 +31,18 @@ struct DetailView: View {
                     .background(Theme.detailBackground, in: RoundedRectangle(cornerRadius: 16,
                                                                              style: .continuous))
                 }
-                       .padding()
+                .padding()
+            }
+        }
+        .navigationTitle("Details")
+        .onAppear {
+            do {
+                userInfo = try StaticJSONMapper.decode(file: "SingleUserData",
+                                                  type: UserDetailResponse.self)
+                
+            } catch {
+                // TODO: Handle any errors
+                print(error)
             }
         }
     }
@@ -34,7 +50,9 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        NavigationView {
+            DetailView()
+        }
     }
 }
 
@@ -46,11 +64,33 @@ private extension DetailView {
 }
 
 private extension DetailView {
+    @ViewBuilder
+    var avatar: some View {
+        if let avatarAbsoluteString = userInfo?.data.avatar,
+           let avatarUrl = URL(string: avatarAbsoluteString) {
+            
+            AsyncImage(url: avatarUrl) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 250)
+                    .clipped()
+            } placeholder: {
+                ProgressView()
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 16,
+                                        style: .continuous))
+        }
+        
+    }
+}
+
+private extension DetailView {
     var general: some View {
         VStack(alignment: .leading,
                spacing: 8) {
             
-            PillView(id: 0)
+            PillView(id: userInfo?.data.id ?? 0)
             
             Group {
                 firstname
@@ -68,7 +108,7 @@ private extension DetailView {
                 .system(.body, design: .rounded)
             )
         
-        Text("<First Name Here>")
+        Text(userInfo?.data.firstName ?? "-")
             .font(
                 .system(.subheadline, design: .rounded)
             )
@@ -82,7 +122,7 @@ private extension DetailView {
                 .system(.body, design: .rounded)
             )
         
-        Text("<Last Name Here>")
+        Text(userInfo?.data.lastName ?? "-")
             .font(
                 .system(.subheadline, design: .rounded)
             )
@@ -96,7 +136,7 @@ private extension DetailView {
                 .system(.body, design: .rounded)
             )
         
-        Text("<Email Here>")
+        Text(userInfo?.data.email ?? "-")
             .font(
                 .system(.subheadline, design: .rounded)
             )
@@ -104,22 +144,31 @@ private extension DetailView {
 }
 
 private extension DetailView {
+    @ViewBuilder
     var link: some View {
-        Link(destination: .init(string: "https://reqres.in/#support-heading")!) {
-            VStack(alignment: .leading,
-                   spacing: 8) {
-                Text("Support Reqres")
-                    .foregroundColor(Theme.text)
-                    .font(
-                        .system(.body, design: .rounded)
-                        .weight(.semibold)
-                    )
-                Text("https://reqres.in/#support-heading")
-            }
+        
+        if let supportAbsoluteString = userInfo?.support.url,
+           let supportUrl = URL(string: supportAbsoluteString),
+           let supportTxt = userInfo?.support.text {
             
-            Spacer()
-            Symbols.link
-                .font(.system(.title3, design: .rounded))
+            Link(destination: supportUrl) {
+                VStack(alignment: .leading,
+                       spacing: 8) {
+                    Text(supportTxt)
+                        .foregroundColor(Theme.text)
+                        .font(
+                            .system(.body, design: .rounded)
+                            .weight(.semibold)
+                        )
+                        .multilineTextAlignment(.leading)
+                    
+                    Text(supportAbsoluteString)
+                }
+                
+                Spacer()
+                Symbols.link
+                    .font(.system(.title3, design: .rounded))
+            }
         }
     }
 }
